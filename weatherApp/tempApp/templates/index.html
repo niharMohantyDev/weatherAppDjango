@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="content_wrapper" id="app">
+    
+      <h1>
+        Weather
+       
+      </h1><br>
+
+      <form method="get">
+        <label name="city">City Name:</label><br>
+        
+        <input type="text" name="city" placeholder="For e.g, Hyderabad"><br><br>
+        <input type="submit" value="Submit">
+      </form> <br>
+  
+      <div class="weather_card">
+        <div class="weather_card_img" :style="{backgroundImage: weatherImg}">
+          <div class="weather_card_state">
+            <span class="material-icons">
+              {{resp.weatherIcon}}
+            </span>
+          </div>
+        </div>
+  
+        <div class="weather_card_infos">
+          <div class="weather_card_infos_title">
+        
+          </div>
+          <div class="weather_card_infos_temp">
+            {{resp.celcius}}°C / {{resp.kelvin}}°K
+          </div>
+          <div class="bottom">
+            <hr>
+            <div class="weather_card_infos_bottom">
+              Weather: {{resp.weather}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+{% endblock %}
